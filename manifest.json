@@ -1,15 +1,22 @@
 {
     "manifest_version": 2,
 
-    "name": "DeterWebgl Plugin",
-    "description": "This extension will analyze a page using GTmetrix",
+    "name": "DeterWebFL Plugin",
+    "description": "This extension will generate deterministic WebGL rendering result",
     "version": "1.0",
 
     "browser_action": {
-        "default_icon": "icon.jpg",
-        "default_popup": "popup.html"
+        "default_icon": "icon.jpg"
     },
     "permissions": [
-        "activeTab"
+        "activeTab",
+        "tabs", "http://*/*", "https://*/*","webNavigation", "*://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["js/jquery.min.js","js/inject.js"],
+            "run_at": "document_start"
+        }
     ]
 }
