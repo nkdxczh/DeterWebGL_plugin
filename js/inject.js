@@ -1,8 +1,4 @@
-var scripts = document.scripts;
-console.log(scripts.length);
-console.log(window.location.href);
-
-/*$.ajax({
+$.ajax({
     url : "http://lab.songli.io/imageCompare/modifyjs",
     type: 'POST',
     async: false,
@@ -10,10 +6,10 @@ console.log(window.location.href);
         url: window.location.href
     },
     success: function(res) {
-        console.log(res);
-        $(document).ready(function() {
-            console.log(res);
-            if(!window.location.href.startsWith("http://lab.songli.io"))window.location.href = res;
-        });
+        //$(document).ready(function() {
+        //if(!window.location.href.startsWith("http://lab.songli.io"))window.location.href = res;
+        document.write(res);
+        //else console.log(window.location.href);
+        //});
     }
-});*/
+});
