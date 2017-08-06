@@ -9,14 +9,18 @@
         "default_icon": "icon.jpg"
     },
     "permissions": [
-        "activeTab",
+        "activeTab","webRequest","webRequestBlocking",
         "tabs", "http://*/*", "https://*/*","webNavigation", "*://*/*"
     ],
     "content_scripts": [
         {
             "matches": ["*://*/*"],
-            "js": ["js/jquery.min.js","js/inject.js"],
+            "js": ["js/test.js"],
             "run_at": "document_start"
         }
-    ]
+    ],
+    "web_accessible_resources": ["js/script.js"],
+    "background": {
+        "scripts": ["js/background.js"]
+    }
 }
