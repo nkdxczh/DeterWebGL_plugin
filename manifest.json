@@ -9,7 +9,7 @@
         "default_icon": "icon.jpg"
     },
     "permissions": [
-        "activeTab","webRequest","webRequestBlocking",
+        "activeTab","webRequest","webRequestBlocking","downloads",
         "tabs", "http://*/*", "https://*/*","webNavigation", "*://*/*"
     ],
     "content_scripts": [
@@ -21,6 +21,6 @@
     ],
     "web_accessible_resources": ["js/script.js"],
     "background": {
-        "scripts": ["js/background.js"]
+        "scripts": ["js/jquery.min.js","js/background.js"]
     }
 }
